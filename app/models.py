@@ -7,7 +7,7 @@ class Paquete(models.Model):
     nombre = models.CharField(max_length=20)
     personas = models.CharField(max_length=3)
     sillas = models.SmallIntegerField()
-    cubresillas = models.SmallIntegerField("cubre sillas",null=True, blank=True)
+    cubresillas = models.SmallIntegerField("cubre sillas", null=True, blank=True)
     mesas = models.SmallIntegerField()
     manteles = models.SmallIntegerField()
     cubremanteles = models.SmallIntegerField()
@@ -35,5 +35,5 @@ class Cliente(models.Model):
 class Reservacion(models.Model):
     paquete = models.ForeignKey(Paquete)
     cliente = models.ForeignKey(Cliente)
-    fecha = models.DateField()
+    fecha = models.DateField(unique=True)
 

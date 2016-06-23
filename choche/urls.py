@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'app.views.index', name='home'),
     url(r'^disponibilidad/$', 'app.views.disponibilidad', name='disponibilidad'),
+    url(r'^datos_personales/(?P<pk>\d+)/$', 'app.views.datos_personales', name='datos_personales'),
 
 ]

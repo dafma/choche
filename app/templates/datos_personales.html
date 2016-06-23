@@ -87,7 +87,7 @@ $(document).ready(function(){
 		   <div class="panel panel-primary">
 
 			 <div class="panel-heading">Reservaciones</div>
-			  <div class="panel-body">
+               <div class="panel-body">
 						   <form  method="POST">
                                 {% csrf_token %}
 								<div class="col-xs-12 col-sm-12">
@@ -109,7 +109,6 @@ $(document).ready(function(){
 						        </div>
 					        </form>
 						</div>
-
 		</div>
 		    <hr>
 	</div>
@@ -125,61 +124,51 @@ $(document).ready(function(){
 						<div class="panel-body">
 							<fieldset>
 								<p class="bg-warning">
-									<div class="alert alert-info" ><strong>From:2016-06-25 To: 2016-06-17</strong>  </div></p>
+									<div class="alert alert-info" ><strong></strong>  </div></p>
 								<legend><h2 class="text-left">Eventos</h2></legend>
-                                {% for paquete in paquetes %}
-                                    <div style="float:left; width:370px; margin-left:10px;">
-                                        <div style="float:left; width:70px; margin-bottom:10px;">
-                                            <img src="/justines/admin/mod_room/rooms/del1.jpg" width="180px" height="150px" style="-webkit-border-radius:5px; -moz-border-radius:5px;"title=""/>
-                                        </div>
-                                        <div style="float:right; height:125px; width:180px; margin:0px; color:#000033;">
-                                            <input type="hidden" name="roomid" value="2"/><p><strong>{{ paquete.nombre }}<br/>
-                                            <strong>Personas : {{ paquete.personas }} <br>
-                                                    Precio : {{ paquete.precio }}
-                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal{{ paquete.id }}">
-                                                  ver detalles
-                                                </button>
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="myModal{{ paquete.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                  <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                      <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                          <br/> sillas: {{ paquete.sillas }}<br/>
-                                                            <strong>cubresillas: {{ paquete.cubresillas }} <br>
-                                                            mesas: {{ paquete.mesas }}, <br>
-                                                            manteles: {{ paquete.manteles }}
-                                                            cubre manteles: {{ paquete.cubremanteles }} <br>
-                                                            juego de loza : {{ paquete.juego_loza }} <br>
-                                                            </strong>
-                                                            </p>
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12">
-                                                        <a href="{% url 'datos_personales' pk=paquete.id %}">Reservar</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
 							</fieldset>
+                             <table class="table table-hover">
+                    <thead>
+                      <tr bgcolor="#999999">
+                      <th width="10">Tipo paquete</th>
+                      <th align="center" width="120">personas</th>
+                      <th align="center" width="120">sillas</th>
+                      <th align="center" width="120">cubresillas</th>
+                      <th align="center" width="120">mesas</th>
+                      <th width="120">manteles</th>
+                      <th align="center" width="120">cubre-manteles</th>
+                      <th align="center" width="90">juego loza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>{{ paquete.nombre }}</td>
+                            <td>{{ paquete.personas }}</td>
+                            <td>{{ paquete.sillas }}</td>
+                            <td>{{ paquete.cubresillas }}</td>
+                            <td>{{ paquete.mesas }}</td>
+                            <td>{{ paquete.manteles }}</td>
+                            <td>{{ paquete.cubremanteles }}</td>
+                            <td>{{ paquete.juego_loza }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td align="right"><h5><b>Total:  </b></h5></td>
+                            <td align="left"><h5><b> {{ paquete.precio }}</b></h5></td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </tfoot>
+                    </table>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                            </form>
 						</div>
 					</div>
-
 				</div>
 		<!--	</div>-->
 		</div>
