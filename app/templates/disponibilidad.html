@@ -130,7 +130,7 @@ $(document).ready(function(){
                                 {% for paquete in paquetes %}
                                     <div style="float:left; width:370px; margin-left:10px;">
                                         <div style="float:left; width:70px; margin-bottom:10px;">
-                                            <img src="/justines/admin/mod_room/rooms/del1.jpg" width="180px" height="150px" style="-webkit-border-radius:5px; -moz-border-radius:5px;"title=""/>
+                                            <img src="{% static 'img/pquetes-formales/amarilis-1.jpeg' %}" width="180px" height="150px" style="-webkit-border-radius:5px; -moz-border-radius:5px;"title=""/>
                                         </div>
                                         <div style="float:right; height:125px; width:180px; margin:0px; color:#000033;">
                                             <input type="hidden" name="roomid" value="2"/><p><strong>{{ paquete.nombre }}<br/>

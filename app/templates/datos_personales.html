@@ -169,27 +169,9 @@ $(document).ready(function(){
 
 
                                 {{ form }}
-{#                                <br/>#}
-{#                                {{ form.apellidos }}#}
-{#                                <br/>#}
-{#                                {{ form.ciudad }}#}
-{#                                <br/>#}
-{#                                {{ form.direccion }}#}
-{#                                <br/>#}
-{#                                {{ form.codigo_postal }}#}
-{#                                <br/>#}
-{#                                {{ form.telefono }}#}
-{#                                <br/>#}
-{#                                {{ form.email }}#}
-{#                                <br/>#}
-{#                                {{ form.c_email }}#}
-{#                                <br/>#}
-{#                                {{ form.tyc }}#}
-{#                                <br/>#}
-{#                                {{ form.paquete }}#}
-{#                                <br/>#}
-
                                 <hr/>
+                                <input type="text" value="{{ paquete.id }}" name="paquete"/>
+                                <input type="date" value="{{ fecha }}" name="fecha"/>
                                 <input type="submit" class="btn btn-danger" name="datos-personales"/>
                             </form>
 

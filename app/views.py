@@ -47,14 +47,15 @@ def datos_personales(request, pk):
     if request.method == 'POST':
         if 'datos-personales' in request.POST:
             form =  ClienteForm(request.POST)
+            paquet = request.POST.get('paquete', False)
+            fecha = request.POST.get('fecha', False)
             if form.is_valid():
                 form.save()
-                fecha = request.POST.get('fecha', False)
                 ultimoUsuario = Cliente.objects.last()
-                obtenerPaquete = Paquete.objects.get(id=ultimoUsuario)
+                obtenerPaquete = Paquete.objects.get(id=paquet)
                 nuevareserva = Reservacion(paquete=obtenerPaquete,cliente=ultimoUsuario, fecha=fecha)
                 nuevareserva.save()
-                return redirect('recibo')
+                return redirect('recibo', kwargs={'pk':pk})
 
         if 'fecha-entrega' in request.POST:
             fecha = request.POST.get('fecha', False)
@@ -71,5 +72,6 @@ def datos_personales(request, pk):
     }
     return render(request, 'datos_personales.html', context)
 
-def recibo(request):
-     return render(request, 'recibo.html')
+def recibo(request, pk):
+    ultimo = Reservacion.objects.get(pk=pk)
+    return render(request, 'recibo.html', {'ultimo':ultimo})
