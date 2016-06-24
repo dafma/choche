@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Paquete, Reservacion
+from .models import Paquete, Reservacion, Cliente
 from .forms import DisponibiliddadForm, ClienteForm
+from django.utils.dateparse import parse_date
 
 # Create your views here.
 
@@ -12,16 +13,26 @@ def disponibilidad(request):
     if request.method == 'POST':
         form = DisponibiliddadForm(request.POST)
         if form.is_valid():
-            dia = form.cleaned_data['fecha']
-            print(dia)
-            reservacion = Reservacion.objects.get(fecha=dia)
-            res = reservacion.paquete.id
-            paquetes = Paquete.objects.all().exclude(id=res)
-            context = {
+            fecha = form.cleaned_data['fecha']
+            print(fecha)
+            if Reservacion.objects.filter(fecha=fecha).exists():
+                reservacion = Reservacion.objects.get(fecha=fecha)
+                res = reservacion.paquete.id
+                paquetes = Paquete.objects.all().exclude(id=res)
+                context = {
+                       'fecha': fecha,
+                        'paquetes': paquetes,
+                        'form': form,
+                }
+                return render(request, 'disponibilidad.html', context)
+            else:
+                paquetes = Paquete.objects.all().order_by('nombre')
+                context = {
+                    'fecha': fecha,
                     'paquetes': paquetes,
                     'form': form,
-            }
-            return render(request, 'disponibilidad.html', context)
+                }
+                return render(request, 'disponibilidad.html', context)
 
     paquetes = Paquete.objects.all().order_by('nombre')
     context = {
@@ -32,9 +43,33 @@ def disponibilidad(request):
 
 def datos_personales(request, pk):
     paquete = Paquete.objects.get(id=pk)
-    form = ClienteForm()
+    form =  ClienteForm()
+    if request.method == 'POST':
+        if 'datos-personales' in request.POST:
+            form =  ClienteForm(request.POST)
+            if form.is_valid():
+                form.save()
+                fecha = request.POST.get('fecha', False)
+                ultimoUsuario = Cliente.objects.last()
+                obtenerPaquete = Paquete.objects.get(id=ultimoUsuario)
+                nuevareserva = Reservacion(paquete=obtenerPaquete,cliente=ultimoUsuario, fecha=fecha)
+                nuevareserva.save()
+                return redirect('recibo')
+
+        if 'fecha-entrega' in request.POST:
+            fecha = request.POST.get('fecha', False)
+            context = {
+                'fecha': fecha,
+                'form': form,
+                'paquete': paquete,
+            }
+            return render(request, 'datos_personales.html', context)
+
     context = {
         'form': form,
         'paquete': paquete,
     }
     return render(request, 'datos_personales.html', context)
+
+def recibo(request):
+     return render(request, 'recibo.html')

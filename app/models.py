@@ -31,9 +31,11 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nombre
 
-
 class Reservacion(models.Model):
     paquete = models.ForeignKey(Paquete)
     cliente = models.ForeignKey(Cliente)
     fecha = models.DateField(unique=True)
+
+    def __str__(self):
+        return "%s, %s"% (self.paquete, self.cliente)
 

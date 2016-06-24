@@ -125,7 +125,7 @@ $(document).ready(function(){
 						<div class="panel-body">
 							<fieldset>
 								<p class="bg-warning">
-									<div class="alert alert-info" ><strong>From:2016-06-25 To: 2016-06-17</strong>  </div></p>
+									<div class="alert alert-info" ><strong>{{ fecha }}</strong>  </div></p>
 								<legend><h2 class="text-left">Eventos</h2></legend>
                                 {% for paquete in paquetes %}
                                     <div style="float:left; width:370px; margin-left:10px;">
@@ -169,7 +169,12 @@ $(document).ready(function(){
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-12">
-                                                        <a href="{% url 'datos_personales' pk=paquete.id %}">Reservar</a>
+                                                        <form action="{% url 'datos_personales' pk=paquete.id %}" method="post">
+                                                            {% csrf_token %}
+                                                            <input type="hidden" value="{{ fecha|date:"Y-m-d" }}" name="fecha"/>
+                                                            <input class="btn btn-large" type="submit" name="fecha-entrega"/>
+                                                        </form>
+
                                                     </div>
                                                 </div>
                                             </div>

@@ -124,8 +124,9 @@ $(document).ready(function(){
 						<div class="panel-body">
 							<fieldset>
 								<p class="bg-warning">
-									<div class="alert alert-info" ><strong></strong>  </div></p>
+									<div class="alert alert-info" >Fecha de reservación:      {{ fecha }}<strong></strong>  </div></p>
 								<legend><h2 class="text-left">Eventos</h2></legend>
+
 							</fieldset>
                              <table class="table table-hover">
                     <thead>
@@ -165,8 +166,35 @@ $(document).ready(function(){
                     </table>
                             <form action="" method="post">
                                 {% csrf_token %}
-                                {{ form.as_p }}
+
+
+                                {{ form }}
+{#                                <br/>#}
+{#                                {{ form.apellidos }}#}
+{#                                <br/>#}
+{#                                {{ form.ciudad }}#}
+{#                                <br/>#}
+{#                                {{ form.direccion }}#}
+{#                                <br/>#}
+{#                                {{ form.codigo_postal }}#}
+{#                                <br/>#}
+{#                                {{ form.telefono }}#}
+{#                                <br/>#}
+{#                                {{ form.email }}#}
+{#                                <br/>#}
+{#                                {{ form.c_email }}#}
+{#                                <br/>#}
+{#                                {{ form.tyc }}#}
+{#                                <br/>#}
+{#                                {{ form.paquete }}#}
+{#                                <br/>#}
+
+                                <hr/>
+                                <input type="submit" class="btn btn-danger" name="datos-personales"/>
                             </form>
+
+
+
 						</div>
 					</div>
 				</div>
