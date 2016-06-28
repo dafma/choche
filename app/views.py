@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Paquete, Reservacion, Cliente
 from .forms import DisponibiliddadForm, ClienteForm
 from django.utils.dateparse import parse_date
+from datetime import timedelta,datetime
 
 # Create your views here.
 
@@ -17,12 +18,13 @@ def disponibilidad(request):
             print(fecha)
             if Reservacion.objects.filter(fecha=fecha).exists():
                 reservacion = Reservacion.objects.get(fecha=fecha)
-                res = reservacion.paquete.id
-                paquetes = Paquete.objects.all().exclude(id=res)
+                res = reservacion.fecha
+                dias3= timedelta(days=3)
+                total = res + dias3
                 context = {
                        'fecha': fecha,
-                        'paquetes': paquetes,
                         'form': form,
+                        'dia3':total
                 }
                 return render(request, 'disponibilidad.html', context)
             else:

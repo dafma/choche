@@ -127,6 +127,11 @@ $(document).ready(function(){
 								<p class="bg-warning">
 									<div class="alert alert-info" ><strong>{{ fecha }}</strong>  </div></p>
 								<legend><h2 class="text-left">Eventos</h2></legend>
+                                {% if dia3 %}
+                                    <h1>
+                                        Esta fecha esta en proceso de reservación por favor verificar el dia {{ dia3 }} para verificar su disponiblidad.
+                                    </h1>
+                                {% endif %}
                                 {% for paquete in paquetes %}
                                     <div style="float:left; width:370px; margin-left:10px;">
                                         <div style="float:left; width:70px; margin-bottom:10px;">
