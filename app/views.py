@@ -55,7 +55,9 @@ def datos_personales(request, pk):
                 obtenerPaquete = Paquete.objects.get(id=paquet)
                 nuevareserva = Reservacion(paquete=obtenerPaquete,cliente=ultimoUsuario, fecha=fecha)
                 nuevareserva.save()
-                return redirect('recibo', kwargs={'pk':pk})
+                ultimopk = Reservacion.objects.last()
+                idpk = ultimopk.id
+                return redirect('recibo', pk=idpk)
 
         if 'fecha-entrega' in request.POST:
             fecha = request.POST.get('fecha', False)
