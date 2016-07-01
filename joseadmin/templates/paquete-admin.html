@@ -1,0 +1,59 @@
+
+{% extends "base-admin.html" %}
+{% load staticfiles %}
+{% block cssdmin %}
+
+{% endblock %}
+{% block contenidoadmin %}
+ <div class="table-responsive">
+    <table class="table" id="example">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Personas</th>
+            <th>Sillas</th>
+            <th>Cubresillas</th>
+            <th>Mesas</th>
+            <th>Manteles</th>
+            <th>Cubremanteles</th>
+            <th>Juego de Loza</th>
+            <th>Precio</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for foo in object_list %}
+                <tr>
+                    <td>{{ foo.nombre }}</td>
+                    <td>{{ foo.personas }}</td>
+                    <td>{{ foo.sillas }}</td>
+                    <td>{{ foo.cubresillas }}</td>
+                    <td>{{ foo.mesas }}</td>
+                    <td>{{ foo.manteles }}</td>
+                    <td>{{ foo.cubremanteles }}</td>
+                    <td>{{ foo.juego_loza }}</td>
+                    <td><strong>{{ foo.precio }}</strong></td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+ </div>
+
+
+
+
+{% endblock %}
+{% block jsadmin %}
+    <script src="{% static "js/datatables.min.js" %}"></script>
+        <script type="text/javascript">
+	// For demo to fit into DataTables site builder...
+	$('#example')
+		.removeClass( 'display' )
+		.addClass('table table-striped table-bordered');
+</script>
+        <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
+{% endblock %}

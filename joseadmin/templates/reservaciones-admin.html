@@ -1,0 +1,49 @@
+
+{% extends "base-admin.html" %}
+{% load staticfiles %}
+{% block cssdmin %}
+
+{% endblock %}
+{% block contenidoadmin %}
+ <div class="table-responsive">
+    <table class="table" id="example">
+        <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Paquete</th>
+            <th>Fecha de reservacion</th>
+            <th>fecha de reservacion prouesta</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for foo in object_list %}
+                <tr>
+                    <td>{{ foo.cliente }}</td>
+                    <td>{{ foo.paquete }}</td>
+                    <td>{{ foo.fecha_ahora }}</td>
+                    <td>{{ foo.fecha }}</td>
+                </tr>
+            {% endfor %}
+                
+        </tbody>
+    </table>
+ </div>
+
+
+
+
+{% endblock %}
+{% block jsadmin %}
+    <script src="{% static "js/datatables.min.js" %}"></script>
+        <script type="text/javascript">
+	// For demo to fit into DataTables site builder...
+	$('#example')
+		.removeClass( 'display' )
+		.addClass('table table-striped table-bordered');
+</script>
+        <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
+{% endblock %}

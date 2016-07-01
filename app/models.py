@@ -34,6 +34,7 @@ class Cliente(models.Model):
 class Reservacion(models.Model):
     paquete = models.ForeignKey(Paquete)
     cliente = models.ForeignKey(Cliente)
+    fecha_ahora = models.DateField(default='2016-05-16')
     fecha = models.DateField(unique=True)
 
     def __str__(self):
