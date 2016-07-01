@@ -12,7 +12,9 @@ class ReservacionList(ListView):
 
 class ReservacionUpdate(UpdateView):
     model = Reservacion
-    success_url = reverse_lazy('ad')
+    template_name = "reservaciones/actualizar-reservacion.html"
+    success_url = reverse_lazy('administrador:reservacion')
+    fields = ['confirmacion']
 
 
 class ClientesList(ListView):

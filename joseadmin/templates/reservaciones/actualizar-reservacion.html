@@ -1,0 +1,13 @@
+{% extends "base-admin.html" %}
+{% block contenidoadmin %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br/>
+    <input type="submit" value="Enviar" class="btn btn-primary" />
+</form>
+    <hr/>
+    <div class="row">
+        <p> <a href="{% url "administrador:paquetes" %}" class="btn btn-danger" >Regresar</a></p>
+    </div>
+{% endblock %}
