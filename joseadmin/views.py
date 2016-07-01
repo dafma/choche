@@ -10,6 +10,10 @@ class ReservacionList(ListView):
     model = Reservacion
     template_name = 'reservaciones-admin.html'
 
+class ReservacionUpdate(UpdateView):
+    model = Reservacion
+    success_url = reverse_lazy('ad')
+
 
 class ClientesList(ListView):
     model = Cliente
@@ -27,10 +31,11 @@ class PaqueteCreation(CreateView):
 
 class PaqueteUpdate(UpdateView):
     model = Paquete
+    template_name = 'paquetes/actualizar_paquete.html'
     success_url = reverse_lazy('administrador:paquetes')
     fields = ['nombre', 'personas', 'sillas', 'cubresillas', 'mesas', 'manteles', 'cubremanteles', 'juego_loza', 'precio']
 
 
-class PaqueteEdit(DeleteView):
+class PaqueteDelete(DeleteView):
     model = DeleteView
     success_url = reverse_lazy('administrador:paquetes')

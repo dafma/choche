@@ -18,6 +18,8 @@
             <th>Cubremanteles</th>
             <th>Juego de Loza</th>
             <th>Precio</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
         </thead>
         <tbody>
@@ -32,6 +34,8 @@
                     <td>{{ foo.cubremanteles }}</td>
                     <td>{{ foo.juego_loza }}</td>
                     <td><strong>{{ foo.precio }}</strong></td>
+                    <td><a href="{% url "administrador:paqueteEdit" foo.id %}">Editar</a></td>
+                    <td><a href="{% url "administrador:paqueteDelete" foo.id %}">Eliminar</a></td>
                 </tr>
             {% endfor %}
 
@@ -39,7 +43,8 @@
     </table>
 
  </div>
-    <a class="btn btn-lng" href="{% url "administrador:paqueteNew" %}">Crear Nuevo Paquete</a>
+    <hr/>
+    <a class="btn btn-primary" href="{% url "administrador:paqueteNew" %}">Crear Nuevo Paquete</a>
 
 
 
