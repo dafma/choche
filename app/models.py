@@ -34,9 +34,9 @@ class Cliente(models.Model):
 class Reservacion(models.Model):
     paquete = models.ForeignKey(Paquete)
     cliente = models.ForeignKey(Cliente)
-    fecha_ahora = models.DateField(default='2016-05-16')
+    fecha_ahora = models.DateField(auto_now_add=True)
     fecha = models.DateField(unique=True)
-    confirmacion = models.BooleanField(default=False)
+    confirmacion = models.BooleanField()
 
     def __str__(self):
         return "%s, %s"% (self.paquete, self.cliente)

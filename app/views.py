@@ -18,13 +18,15 @@ def disponibilidad(request):
             print(fecha)
             if Reservacion.objects.filter(fecha=fecha).exists():
                 reservacion = Reservacion.objects.get(fecha=fecha)
-                res = reservacion.fecha
+                res = reservacion.fecha_ahora
+                resPropuesta = reservacion.fecha
                 dias3= timedelta(days=3)
                 total = res + dias3
                 context = {
                        'fecha': fecha,
                         'form': form,
-                        'dia3':total
+                        'dia3':total,
+                        'resPropuesta':resPropuesta,
                 }
                 return render(request, 'disponibilidad.html', context)
             else:

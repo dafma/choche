@@ -21,6 +21,6 @@ class ClienteForm(forms.ModelForm):
             'telefono': forms.TextInput(attrs={'type': 'text', 'class': 'form-control'}),
             'email': forms.TextInput(attrs={'type': 'email', 'class': 'form-control'}),
             'c_email': forms.TextInput(attrs={'type': 'email', 'class': 'form-control'}),
-            'tyc': forms.TextInput(attrs={'type': 'text', 'class': 'form-control'}),
+            'tyc': forms.TextInput(attrs={'type': 'checkbox', 'class': 'form-control'}),
         }
 

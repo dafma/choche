@@ -170,8 +170,8 @@ $(document).ready(function(){
 
                                 {{ form }}
                                 <hr/>
-                                <input type="text" value="{{ paquete.id }}" name="paquete"/>
-                                <input type="date" value="{{ fecha }}" name="fecha"/>
+                                <input type="hidden" value="{{ paquete.id }}" name="paquete"/>
+                                <input type="hidden" value="{{ fecha }}" name="fecha"/>
                                 <input type="submit" class="btn btn-danger" name="datos-personales"/>
                             </form>
 
