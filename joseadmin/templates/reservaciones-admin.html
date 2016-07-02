@@ -20,11 +20,16 @@
         <tbody>
             {% for foo in object_list %}
                 <tr>
-                    <td>{{ foo.cliente }}</td>
+                    <td>{{ foo.cliente }}  {{ foo.cliente.apellidos }}</td>
                     <td>{{ foo.paquete }}</td>
                     <td>{{ foo.fecha_ahora }}</td>
                     <td>{{ foo.fecha }}</td>
-                    <td>{{ foo.confirmacion }}</td>
+                    {% if foo.confirmacion == True %}
+                          <td class="alert alert-success" >Si</td>
+                    {% else %}
+                        <td class="alert alert-danger" >No</td>
+                    {% endif %}
+
                     <td><a href="{% url "administrador:reservacionEdit" foo.id %}">Editar</a></td>
                 </tr>
             {% endfor %}

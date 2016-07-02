@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18bcb6b6-5b8c-47a9-b135-196677b49890" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/joseadmin/templates/reservaciones/actualizar-reservacion.html" afterPath="$PROJECT_DIR$/joseadmin/templates/reservaciones/actualizar-reservacion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/datos_personales.html" afterPath="$PROJECT_DIR$/app/templates/datos_personales.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/disponibilidad.html" afterPath="$PROJECT_DIR$/app/templates/disponibilidad.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/forms.py" afterPath="$PROJECT_DIR$/app/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/recibo.html" afterPath="$PROJECT_DIR$/app/templates/recibo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views.py" afterPath="$PROJECT_DIR$/app/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/joseadmin/views.py" afterPath="$PROJECT_DIR$/joseadmin/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/joseadmin/templates/reservaciones-admin.html" afterPath="$PROJECT_DIR$/joseadmin/templates/reservaciones-admin.html" />
     </list>
     <ignored path="choche.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +26,7 @@
     <favorites_list name="choche" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5089686">
+    <splitter split-orientation="horizontal" split-proportion="0.71898353">
       <split-first>
         <splitter split-orientation="horizontal" split-proportion="0.8522388">
           <split-first>
@@ -72,10 +63,10 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+              <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/joseadmin/urls.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.27687296">
+                    <state vertical-scroll-proportion="0.0">
                       <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="75" />
                       <folding>
                         <element signature="e#20#52#0" expanded="true" />
@@ -87,18 +78,18 @@
               <file leaf-file-name="actualizar_paquete.html" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/joseadmin/templates/paquetes/actualizar_paquete.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0">
+                    <state vertical-scroll-proportion="-0.0">
                       <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="14" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="reservaciones-admin.html" pinned="false" current-in-tab="false">
+              <file leaf-file-name="reservaciones-admin.html" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/joseadmin/templates/reservaciones-admin.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0">
-                      <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+                    <state vertical-scroll-proportion="0.30612245">
+                      <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
                       <folding />
                     </state>
                   </provider>
@@ -259,7 +250,6 @@
         <option value="$PROJECT_DIR$/joseadmin/templates/paquete-admin.html" />
         <option value="$PROJECT_DIR$/joseadmin/templates/paquetes/actualizar_paquete.html" />
         <option value="$PROJECT_DIR$/joseadmin/urls.py" />
-        <option value="$PROJECT_DIR$/joseadmin/templates/reservaciones-admin.html" />
         <option value="$PROJECT_DIR$/app/templates/datos_personales.html" />
         <option value="$PROJECT_DIR$/app/forms.py" />
         <option value="$PROJECT_DIR$/app/templates/recibo.html" />
@@ -268,6 +258,7 @@
         <option value="$PROJECT_DIR$/joseadmin/templates/reservaciones/actualizar-reservacion.html" />
         <option value="$PROJECT_DIR$/app/models.py" />
         <option value="$PROJECT_DIR$/joseadmin/views.py" />
+        <option value="$PROJECT_DIR$/joseadmin/templates/reservaciones-admin.html" />
       </list>
     </option>
   </component>
@@ -1089,26 +1080,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/joseadmin/templates/paquetes/actualizar_paquete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/joseadmin/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/joseadmin/templates/reservaciones-admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1197,9 +1172,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/joseadmin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/joseadmin/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27687296">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="75" />
           <folding>
             <element signature="e#20#52#0" expanded="true" />
@@ -1207,13 +1192,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/joseadmin/views.py">
+    <entry file="file://$PROJECT_DIR$/joseadmin/templates/paquetes/actualizar_paquete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49837133">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/joseadmin/templates/reservaciones-admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30612245">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
